@@ -42,7 +42,8 @@ import Battery3D               from '~/components/Battery3D.vue'
 
 /* ─────────── 1. константы ─────────── */
 const DURATION = 170_000        // 2 мин 50 с  → в миллисекундах
-const howl = new Howl({ src: ['/battery-dance/music.mp3'], loop: true, volume: 0.8, html5: true })
+const base = useRuntimeConfig().app.baseURL
+const howl = new Howl({ src: `${base}music.mp3`, loop: true, volume: 0.8, html5: true })
  
 /* ─────────── 2. реактивность ───────── */
 const percent = ref(0)
@@ -63,6 +64,7 @@ function initAudio () {
     data = new Uint8Array(analyser.frequencyBinCount)
     src.connect(analyser)
     analyser.connect(ctx.destination)
+    howl.play()
 
     howl.once('unlock', () => {
       howl.play()

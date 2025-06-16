@@ -1,16 +1,17 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
-  devtools: { enabled: true },
-    modules: [
-    '@tresjs/nuxt'
-  ],
-  app: { baseURL: '/battery-dance/' },
-  typescript: {
-    strict: true
+  // GitHub Pages раздаёт только статику
+  ssr: false,
+
+  /**
+   * baseURL можно задать через переменную окружения.
+   * Локально она будет просто «/», в CI — «/battery-dance/».
+   */
+  app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/'
   },
+
   nitro: {
-    prerender: {
-      routes: ['/']
-    }
+    // перечислите все SPA-маршруты, которые должны быть в статике
+    prerender: { routes: ['/', '/1index'] }
   }
 })

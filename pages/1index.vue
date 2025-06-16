@@ -2,7 +2,7 @@
 <div class="start">
     <h1>Start</h1>
     <!-- <button @click="goToCharging">Начать зарядку ⚡️</button> -->
-    <a class="button" href="/battery-dance/">Почати ⚡️</a>
+    <!-- <a class="button" href="/battery-dance/">Почати ⚡️</a> -->
 </div>
 </template>
 

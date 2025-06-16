@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]      # каждый push в main ➜ новый деплой
+  workflow_dispatch:        # + ручной запуск в интерфейсе
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable        # включает pnpm/yarn, если нужно
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci                 # или pnpm install / yarn install
+      - run: npm run build:pages    # 👈 сборка с github_pages-preset
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./.output/public    # Nuxt 3.17+ кладёт готовый сайт сюда
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github_pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

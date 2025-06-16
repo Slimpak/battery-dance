@@ -6,7 +6,10 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "deploy": "yarn generate && gh-pages -d dist",
+    "build:pages": "NUXT_APP_BASE_URL=/battery-dance/ npx nuxt build --preset github_pages",
+    "deploy":   "npm run generate && npx gh-pages -d .output/public -b gh-pages -f -m \"deploy $(date +%F)\"",
+
+
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
