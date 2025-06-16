@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "deploy": "yarn generate && gh-pages -d dist",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@tresjs/nuxt": "^4.0.0",
+    "howler": "^2.2.4",
+    "nuxt": "^3.17.5",
+    "vue": "^3.5.16",
+    "vue-router": "^4.5.1"
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
+  "devDependencies": {
+    "@tresjs/cientos": "^4.3.1",
+    "@tresjs/core": "^4.3.6",
+    "gh-pages": "^6.3.0",
+    "sass-embedded": "^1.89.2",
+    "three": "^0.177.0"
+  }
+}
