@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/', '/charging']
+      routes: ['/']
     }
   }
 })
