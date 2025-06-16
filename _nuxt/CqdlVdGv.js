@@ -1,0 +1,1 @@
+import{d as t,u as s,x as a,z as o,y as n,_ as r}from"./rS5nVTzU.js";const _={class:"start"},d=t({__name:"1index",setup(c){return s(),(p,e)=>(n(),a("div",_,e[0]||(e[0]=[o("h1",null,"Start",-1)])))}}),i=r(d,[["__scopeId","data-v-9adb8b9a"]]);export{i as default};
