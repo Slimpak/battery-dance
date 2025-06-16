@@ -42,7 +42,7 @@ import Battery3D               from '~/components/Battery3D.vue'
 
 /* ─────────── 1. константы ─────────── */
 const DURATION = 170_000        // 2 мин 50 с  → в миллисекундах
-const howl = new Howl({ src: ['/music.mp3'], loop: true, volume: 0.8, html5: true })
+const howl = new Howl({ src: ['/battery-dance/music.mp3'], loop: true, volume: 0.8, html5: true })
  
 /* ─────────── 2. реактивность ───────── */
 const percent = ref(0)
