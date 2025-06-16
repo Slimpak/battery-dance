@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     modules: [
     '@tresjs/nuxt'
   ],
+  app: { baseURL: '/battery-dance/' },
   typescript: {
     strict: true
   },
